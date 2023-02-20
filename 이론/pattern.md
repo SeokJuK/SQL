@@ -155,3 +155,11 @@ CAST 함수는 type을 변경하는데 유용하다
 CAST(expression as type) or CONVERT(expression, type);
 ```
 
+# ROW 카운팅(counting)
+- 테이블에 어떤 특정 조건의 데이터가 어떤 빈도로 나타나는가에 대한 database의 응답이다
+- 예를 들어, 부서별로 직원이 몇명인지 궁금하고 싶을 때 사용
+- 직원의 총 수는 테이블의 전체 row수 이다.
+- 전체 직원 수 구하기
+```
+select count(*) from employees;
+```
