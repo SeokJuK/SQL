@@ -81,8 +81,20 @@ select * from employees where last_name ='king' or first_name ='steven'; //first
 ```
 select*from employees where commision_pct is null; // null인것만 찾기
 select*from employees where commision_pct is not null; //null이 아닌걸 찾기
+```
 
 # 패턴 매칭
 - LIKE or NOT LIKE 비교 연산자를 사용해서 패턴매칭을 한다.
 - 기본적으로 영문자인경우 대소문자 구분X
 
+# GROUP BY 절의 사용
+- GROUP BY 절에 기술된 칼럼이 반드시 SELECT절 뒤에 올 필요는 없으나 SELECT문 결과의 의미를 명확히 하기 위해 기술하는 것이 좋다.
+- 부서별 연봉 평균을 출력하시오
+```
+select department_id, avg(salary) from employees group by department_id;
+```
+
+# SELECT 구문의 전체 문형
+- GROUP BY: 전체 데이터를 소그룹으로 나눈 칼럼을 명시
+- HAVING : GROUP에 대한 조건을 기술
+- SELECT(DISTINCT) 칼럼명(ALIAS) FROM 테이블명 WHERE 조건식 GROUP BY 칼럼명 HAVING 조건식 ORDER BY 칼럼식이나 표현식(ASC OR DESC)
