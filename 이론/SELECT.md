@@ -52,7 +52,7 @@ select fist_name, last_name, hire_date from employees order by hire_date asc; //
 select fist_name, last_name, hire_date from employees order by hire_date desc; //내림차순
 ```
 
-# WHERER과 함께 조회하기
+# WHERE과 함께 조회하기
 > SELECT(DISTINCT) 칼럼명 (ALIAS)
 > FROM 테이블명
 > WHERE 조건식
