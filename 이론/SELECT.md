@@ -66,7 +66,7 @@ select fist_name, last_name, hire_date from employees order by hire_date desc; /
 select * from employees where last_name ='king';
 ```
 - 논리 연산자 and
-- ```
+```
 select * from employees where last_name ='king' and first_name ='steven'; //first_name이 steven이면서 last_name이 king인사람
 ```
 - 논리 연산자 or
