@@ -85,5 +85,4 @@ select*from employees where commision_pct is not null; //null이 아닌걸 찾�
 # 패턴 매칭
 - LIKE or NOT LIKE 비교 연산자를 사용해서 패턴매칭을 한다.
 - 기본적으로 영문자인경우 대소문자 구분X
-- 와일드카드를 
-```
+
