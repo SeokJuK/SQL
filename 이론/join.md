@@ -20,3 +20,35 @@ select 테이블명.컬럼명, 테이블명.컬럼명... from 테이블1. 테이
 - where절 혹은 on절을 이용
 - 액세스 효율을 향상시키고 좀 더 명확히 하기 위해 칼럼이름 앞에 테이블 이름을 밝힌다
 - 같은 이름의 칼럼이 조인대상 테이블에 존재하면 반드시 컬럼이름 앞에 테이블 이름을 밝혀주어야 한다
+
+# 조건(theta) Join
+- 임의의 조건을 Join 조건으로 사용 가능
+- Non-Equi-Join이라고도 함
+```
+select e.ename, e.sal, s.grade
+from emp e, salgrade s
+where e.sal between s.local and s.hisal
+```
+
+# Natural Join
+- 두 테이블에 공통 칼럼이 있는 경우 별다른 JOIN 조건없이 공통 칼럼처럼 묵시적으로 조인이 되는 유형
+- ANSI/ISO SQL1999를 따르는 ANSI JOIN문법
+```
+select*from departments natural join locations; //잘 사용하지 않는다
+```
+
+# Inner Join - Join ~ Using
+- Natural Join의 문제점 : 조인하고자 하는 두 테이블에 같은 이름의 칼럼이 많을 때 위와 같을 시 특정한 칼럼으로만 조인하고 싶다면 Using절을 사용한다
+```
+select * from employees natural join departments;
+
+select * from employees join departments using(department_id);
+```
+
+# Inner Join - Join - On
+- 공통된 이름의 칼럼이 없는 경우 가장 보편적으로 사용할 수 있는 유형
+- WHERE절에 일반 조건만 쓸 수 있게하고 조인 조건은 ON에 두어 보다 의미를 명확히 하고 알아보기 쉽다
+- ON부분을 WHERE절에서 작성 가능하다
+```
+SELECT * FROM EMPLOYEES E JOIN DEPARTMENTS D ON(E.DEPARTMENT_ID = D.DEPARTMENT_ID);
+```
